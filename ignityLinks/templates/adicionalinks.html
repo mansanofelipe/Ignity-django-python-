@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block body%}
+
+
+	<div class="container">
+
+		<!--<button id="adicionar-link" class="btn btn-lg btn-primary btn-block">Adicionar novo link!</button> -->
+
+		<ul class="lista-links">
+
+			<form class="form-signin" action="{% url "registrar" %}" method="post">
+				{% csrf_token %}
+				<input id="nomeUrl" name="nomeUrl" type="text" placeholder="Título do site" class="campoUrl form-control">
+				<input id="linkUrl" name="linkUrl" type="text" placeholder="Http/Url do site" class="linkUrl form-control">
+				<button id="botaoAdicionar" type="submit" class="botaoAdicionar btn btn-lg btn-block">Salvar Link no meu Ignity!</button>
+				<button id="botaoApagar" class="botaoApagar btn btn-lg btn-block">Limpar</button> 
+
+			</form>
+				
+		</ul>
+
+		<br>
+
+		{% if novo_link %}
+		<h4 class="titulo-secundario">Cole esse link na Bio do seu Instagram: <a href="/user/{{user.perfil.nome}}"  target="_blank"> www.ignity.com.br/user/{{user.perfil.nome}}</a></h4>
+		<div class="lista-outputs item-lista">
+			{% for link in novo_link %}
+			<form action="http://{{link.url}}" target="_blank" class="form-botao-externo">
+				<button class="botaoExterno btn btn-lg btn-block" type="submit">{{link.titulo}}</button>
+			</form>
+				<span class="botao-deletar"><a href="{% url "apagalink" link.id %}">Apagar esse link</a></span> 
+        	{% endfor %}
+		</div>	
+
+	   {% else %}
+       <p>Comece a cadastrar seus links acima!</p>
+       {% endif %}
+	
+	</div>
+
+
+<script src="../static/scripts/adicionaForm.js"></script>
+
+
+{% endblock %}

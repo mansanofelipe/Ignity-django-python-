@@ -1,0 +1,76 @@
+
+.item-lista{
+	margin-top: 0px;
+	margin-bottom: 0px;
+	padding:5px;
+	list-style: none;
+	border: 1px lightgrey solid;
+}
+
+.botaoAdicionar{
+	background-color: orange;
+	font-weight: bold;
+}
+
+.titulo-principal{
+	text-align: center;
+}
+
+.titulo-secundario{
+	text-align: left;
+	margin-left: 40px;
+}
+
+.botaoExterno{
+	background-color: salmon;
+	border: 1px darksalmon solid;	
+	font-weight: bold;
+	color:white;
+	height:5em;
+	margin-bottom: 15px;
+}
+
+.botaoExterno:hover{
+	background-color: white;
+	color:darksalmon;
+}
+
+.lista-outputs{
+	margin-left:40px;
+}
+
+.num-cliques{
+
+	margin-bottom: 15px;
+	font-size: 10px;
+	margin-left: 30px;
+}
+
+.num-likes{
+
+	margin-bottom: 15px;
+	font-size: 10px;
+	margin-left: 350px;
+}
+
+.numero-cliques{
+
+}
+
+.alinhamento{
+	display: inline;
+	white-space: nowrap;
+}
+
+.form-botao-externo{
+	height:7em;
+	margin-bottom: 0px;
+	margin-top:15px;
+}
+
+.botao-deletar{
+	margin-top:0px;
+	padding-top: 0px;
+	font-size: 12px;
+}
+
