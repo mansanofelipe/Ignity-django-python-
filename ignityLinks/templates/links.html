@@ -14,10 +14,7 @@
         <div class="container">
             
             <div class="header">
-            <ul class="nav nav-pills pull-right">
-                <li><a href="{% url "login" %}">{{user.perfil.nome}}</a></li>
-                <li><a href="{% url "logout" %}">LOGOUT</a></li>
-            </ul>
+           
 
          <h3 class="text-muted">Ignity</h3>
  
@@ -28,19 +25,23 @@
 
                 {% for link in lista_links %}
                 <li class="item-lista">
-                <form action="http://{{link.url}}" target="_blank" class="form-botao-externo">    
-                <button class="botaoExterno btn btn-lg btn-block link-externo">{{link.titulo}}</button>
-                </form>
-                <span class="alinhamento">
-                <span class="num-cliques">Número de Cliques: <span class="numero-cliques"></span></span>
-                <span class="num-likes">Likes: </span>
-                </span>
+                
+                <div onclick="abreJanela('{{link.url}}')" class="abre-janela")>
+                    <form action="{% url "clicalink" link.id %}" method="post" class="form-botao-externo">
+                    {% csrf_token %}    
+                    <button class="botaoExterno btn btn-lg btn-block link-externo">{{link.titulo}}</button>
+                    </form>
+                    <span class="alinhamento">
+                    <span class="num-cliques">Número de Cliques:{{link.cliques}} <span class="numero-cliques"></span></span>
+                    <span class="num-likes">Likes: </span>
+                    </span>
+                </div>
                 </li>
                 {% endfor %}
             </ul>
         </div>
        
-       <script src="../static/scripts/contaCliques.js"></script>     
+       <script src="../static/scripts/abreJanela.js"></script>     
    
     </body>
 </html>

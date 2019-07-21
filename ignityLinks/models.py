@@ -8,10 +8,14 @@ class NovoLink(models.Model):
     url=models.CharField(max_length=255, null=False)
     data_criacao=models.CharField(max_length=255, null=False)
     usuario=models.ForeignKey(User, related_name="usuario")
+    cliques=models.IntegerField(max_length=10, null=False) #descobrir como colocar valor inicial padrao=0
 
     def esconder(self):
-    	exibe=True;
+    	exibe=True
     	pass   # adicionar código do toggle de exibe/esconde
+
+    def incrementaClique(self):
+        self.cliques=self.cliques+1
    
 
 class NovoForm(forms.Form):

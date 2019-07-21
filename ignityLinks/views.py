@@ -44,7 +44,8 @@ class RegistrarNovoForm(View):
 				titulo=titulo, 
 				url=url,
 				data_criacao=datetime.datetime.now(),
-				usuario=usuario
+				usuario=usuario,
+				cliques=0
 				)
 
 	    novo_link.save()
@@ -97,3 +98,17 @@ def apagalink(request, link_id): #melhorar esse código, do jeito que está link
     usuario= User.objects.get(username=perfillog.usuario.username)
     
     return render(request,"adicionalinks.html", {"perfil" : perfil,"novo_link":NovoLink.objects.filter(usuario=usuario)})
+
+def clicalink(request, link_id): #melhorar esse código, do jeito que está links estão expostos e podem ser facilmente apagados
+    
+    link_id=int(link_id) # converte string em número, para a query abaixo funcionar
+    link=NovoLink.objects.get(id=link_id)
+    link.incrementaClique()
+    link.save()
+
+    perfillog=get_perfil_logado(request)
+    perfil=get_perfil_logado(request)
+    usuario= User.objects.get(username=perfillog.usuario.username)
+
+    return render(request, "links.html", { "perfil" : perfil, "lista_links":NovoLink.objects.filter(usuario=usuario)})
+

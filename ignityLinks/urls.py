@@ -1,6 +1,6 @@
 from django.conf.urls import patterns, include, url
 from ignityLinks import views
-from ignityLinks.views import RegistrarNovoForm, RegistrarNovoUsuarioForm, index, perfillogado
+from ignityLinks.views import RegistrarNovoForm, RegistrarNovoUsuarioForm, index, perfillogado, clicalink, apagalink
 from django.contrib.auth.models import User
 
 
@@ -13,6 +13,7 @@ urlpatterns = patterns('',
 	url(r"^user/(?P<perfil_nome>\w+)$", views.exibirlinks, name="exibirlinks"),
 	url(r"^id?", views.perfillogado, name="login"),
 	url(r"^apaga/(?P<link_id>\d+)$", views.apagalink, name="apagalink"),
+	url(r"^click/(?P<link_id>\d+)$", views.clicalink, name="clicalink"),
 
 	
 )
