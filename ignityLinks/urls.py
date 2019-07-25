@@ -5,7 +5,9 @@ from django.contrib.auth.models import User
 
 
 urlpatterns = patterns('',
-	url(r'^$', views.login, name="logar"),
+	url(r'^$', views.home, name="home-page"),
+	url(r'precos/$', views.precos, name="precos"),
+	url(r'entrar/$', views.login, name="logar"),	
 	url(r'registrar', RegistrarNovoForm.as_view(), name="registrar"),
 	url(r"^login/$", "django.contrib.auth.views.login", {"template_name":"login.html"}, name="login"),
 	url(r"^novo-usuario/$", RegistrarNovoUsuarioForm.as_view(), name="novo-usuario"),

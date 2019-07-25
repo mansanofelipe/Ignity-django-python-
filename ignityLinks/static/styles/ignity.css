@@ -4,7 +4,7 @@
 	margin-bottom: 0px;
 	padding:5px;
 	list-style: none;
-	border: 1px lightgrey solid;
+	
 }
 
 .botaoAdicionar{
@@ -72,5 +72,6 @@
 	margin-top:0px;
 	padding-top: 0px;
 	font-size: 12px;
+	color: black;
 }
 

@@ -1,8 +1,78 @@
-{% extends "base.html" %}
+{% extends "basedeslog.html" %}
 
 {% block body %}
+    <section class="mbr-section form1 cid-rx4PrnCkBg" id="form1-d">
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	    <div class="container">
+        <div class="row justify-content-center">
+            <div class="title col-12 col-lg-8">
+			    <h1 class="mbr-section-title align-center pb-3 mbr-fonts-style display-2">Sua melhor chance no Instagram</h1>                               
+            </div>
+            <div class="title col-12 col-lg-8">
+			    <h3 class="mbr-section-title align-center pb-3 mbr-fonts-style display-4">Crie seu usuário grátis e melhore seus resultados
+				</h3>                               
+            </div>
+        </div>
+    </div>
 
-	<form class="form-signin" action="{% url "novo-usuario" %}" method="post">
+        
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="media-container-column col-lg-8" data-form-type="formoid">
+             
+                <!---Formbuilder Form--->
+                <form action="{% url "novo-usuario" %}"  method="POST" class="mbr-form form-with-styler" data-form-title="Mobirise Form"><input type="hidden" name="login" value="me6B3Fe5w2GD/g7OD4xeJyK/cidDzJurGVlB+9iBNrGDd+LicXG5CAwuQ0cR5MuRlCSG8GOw1bknPmYu12emC7hfVhaavdec/tuNVHRXdjygvoNReno7J8OXJti27WIW">
+                {% csrf_token %}
+                    <div class="row">
+                        
+                        <div hidden="hidden" data-form-alert-danger="" class="alert alert-danger col-12">
+                        </div>
+                    </div>
+                    <div class="dragArea row">
+                        <div class="col-md-6  form-group" data-for="name">
+                            <label for="name-form1-d" class="form-control-label mbr-fonts-style display-7">Email</label>
+                            <input id="id_email" name="email" type="text" data-form-field="Name" class="form-control display-7" placeholder="nome@email.com" value="{{form.email.value}}" required>
+                        </div>
+
+                        <div class="col-md-6  form-group" data-for="name">
+                            <label for="name-form1-d" class="form-control-label mbr-fonts-style display-7">Seu Login</label>
+                            <input  class="form-control display-7" id="id_nome" name="nome" type="text"placeholder="insira seu nome de usuário" value="{{form.nome.value}}" required>
+                        </div>
+
+                        <div class="col-md-6  form-group" data-for="password">
+                            <label for="email-form1-d" class="form-control-label mbr-fonts-style display-7">Senha</label>
+                            <input class="form-control display-7" id="id_senha" name="senha" type="password" placeholder="insira sua senha" required >
+                        </div>                        
+
+                        <div class="col-md-6  form-group" data-for="name">
+                            <label for="email-form1-d" class="form-control-label mbr-fonts-style display-7">Telefone</label>
+                            <input class="form-control display-7" id="id_telefone" name="telefone" type="text" placeholder="(xx)xxxx-xxxxx" value="{{form.telefone.value}}">
+                        </div>
+
+                       
+                        
+                        <div class="col-md-12 input-group-btn align-center"><button type="submit" class="btn btn-primary btn-form display-4">Criar Nova Conta</button></div>
+                        <input type="hidden" name="next" value="{{ next }}" />
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+        
+                    </div>
+                </form><!---Formbuilder Form--->
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- Código do form antigo
+
+<!--	<form class="form-signin" action="{% url "novo-usuario" %}" method="post">
 		{% csrf_token %}
 		<h3 class="form-signin-heading">Crie seu usuário grátis e melhore seus resultados no Instagram</h3>
 
@@ -22,5 +92,5 @@
 
 
 		<button class="btn btn-lg btn-primary btn-block" type="submit">Crie seu Ignity!</button>
-	</form>
+	</form> -->
 {% endblock %}

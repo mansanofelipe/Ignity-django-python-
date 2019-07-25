@@ -14,11 +14,16 @@
         <div class="container">
             
             <div class="header">
-           
+              
 
-         <h3 class="text-muted">Ignity</h3>
+        <img class="pull-right" src="{% static "assets/images/dancing-122x122.png" %}"  alt="Minha Home" title="" style="height: 3.8rem;">
+         <h3 class="text-muted pull-right">InstaGin.ga</h3>
+
  
-         <h1 class="titulo-principal">Links de {{perfil.nome}}</h1>
+
+
+
+         <h3 class="text-muted">Links de {{perfil.nome}}</h3>
 
          <div class="lista-outputs">
             <ul>
@@ -31,10 +36,10 @@
                     {% csrf_token %}    
                     <button class="botaoExterno btn btn-lg btn-block link-externo">{{link.titulo}}</button>
                     </form>
-                    <span class="alinhamento">
+                    <!-- <span class="alinhamento">
                     <span class="num-cliques">Número de Cliques:{{link.cliques}} <span class="numero-cliques"></span></span>
                     <span class="num-likes">Likes: </span>
-                    </span>
+                    </span> -->
                 </div>
                 </li>
                 {% endfor %}
