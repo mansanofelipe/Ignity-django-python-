@@ -21,6 +21,12 @@ def get_perfil_logado(request):
 def login(request):
 	return render(request,"login.html")	
 
+def home(request):
+    return render(request,"index.html")	
+
+def precos(request):
+    return render(request,"precos.html")	
+
 def criaNovoLink(request):
     return render(request,"quasela.html")
 

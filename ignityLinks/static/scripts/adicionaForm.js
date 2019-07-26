@@ -61,5 +61,5 @@ botaoApagar.addEventListener("click", function(event){ // chama a função de ap
 
 function apagaFormInput(event){
 	event.preventDefault();
-	event.target.parentNode.reset(); // apaga o node avô no clique
+	event.target.parentNode.parentNode.parentNode.reset(); // apaga o node bisaavô no clique
 }

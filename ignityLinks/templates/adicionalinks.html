@@ -3,10 +3,125 @@
 {% block body%}
 
 
+<section class="mbr-section form1 cid-rx4PrnCkBg" id="form1-d">
+<br>
+<br>
+<br>
+<br>
+
+    
+
+    
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="title col-12 col-lg-8">
+                <h2 class="mbr-section-title align-center pb-3 mbr-fonts-style display-2">Crie novos links</h2>
+                
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="media-container-column col-lg-8 " data-form-type="formoid">
+                <!---Formbuilder Form--->
+                <form action="{% url "registrar" %}" method="POST" class="mbr-form form-with-styler">
+				{% csrf_token %}
+                    <div class="row">
+                        
+
+                        <div hidden="hidden" data-form-alert-danger="" class="alert alert-danger col-12">
+                        </div>
+                    </div>
+                    <div>
+                        <div class="col-md-10  form-group" data-for="name">
+                            <input id="nomeUrl" name="nomeUrl" type="text" placeholder="Título do site" class="form-control display-7 align-center">
+                        </div>
+                        <div class="col-md-10  form-group" data-for="email">
+                            <input id="linkUrl" name="linkUrl" type="text" placeholder="Http/Url do site"  class="form-control display-7 align-center">
+                        </div>
+                                              
+                        <div class="col-md-12 input-group-btn align-center">
+                        	<button type="submit" class="btn btn-form btn-secondary display-3">Salvar no meu InstaGinga</button>
+                        
+                        	<button id="botaoApagar" class="btn btn-form display-7 botaoApagar">Limpar</button></div>
+                    </div>
+                </form><!---Formbuilder Form--->
+            </div>
+        </div>
+    </div>
+    <br>
+</section>
+
+<section class="mbr-section content4 cid-rx5p9scDJF" id="content4-i">
+
+    
+	{% if novo_link %}
+    
+	<!--<div class="container">
+    	<div class="row justify-content-center">
+            <div class="title col-12 col-lg-8">
+                <h3 class="mbr-section-title align-center pb-3 mbr-fonts-style display-5">Comece a cadastrar seus links acima!</h3>
+                
+            </div>
+        </div>
+    	</div> -->
+
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="title col-12 col-md-8">
+                <h2 class="align-center pb-3 mbr-fonts-style display-5">Cole esse link na Bio do seu Instagram:&nbsp;</h2>
+                <h3 class="mbr-section-subtitle align-center mbr-light mbr-fonts-style display-5"><a href="/user/{{user.perfil.nome}}" target="_blank" class="text-warning"><strong>
+                    instagin.ga/user/{{user.perfil.nome}}
+                </strong></a></h3>               
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
+	<div class="row justify-content-center">
+        <div class="title col-12 col-lg-8">
+    	    <h2 class="mbr-section-title align-center pb-3 mbr-fonts-style display-2">Seus links atuais:</h2>
+                
+        </div>
+    </div>
+
+    <div class="lista-outputs item-lista">
+			{% for link in novo_link %}
+                    <div class="mbr-section-btn pt-3 align-center">
+                        <a href="http://{{link.url}}" class="btn btn-warning-outline display-4" target="_blank">
+                            {{link.titulo}}
+                        </a>
+                    </div>
+                    <div class="mbr-section-title align-center pb-3 mbr-fonts-style">
+						<span class="botao-deletar"><a class="botao-deletar" href="{% url "apagalink" link.id %}">Apagar esse link</a></span> 
+					</div>
+					<div class="mbr-section-title align-center pb-3 mbr-fonts-style">
+						<span class="botao-deletar">Total de cliques: {{link.cliques}}</span> 
+					</div>
+		
+        	{% endfor %}
+		</div>
+
+
+    {% else %}
+    	<div class="container">
+    	<div class="row justify-content-center">
+            <div class="title col-12 col-lg-8">
+                <h3 class="mbr-section-title align-center pb-3 mbr-fonts-style display-5">Comece a cadastrar seus links acima!</h3>
+                
+            </div>
+        </div>
+    	</div>
+       
+    {% endif %}
+</section>
+
+<!-- código antido do mecanismo de criar e mostrar os novos links
+
 	<div class="container">
 
 		<!--<button id="adicionar-link" class="btn btn-lg btn-primary btn-block">Adicionar novo link!</button> -->
-
+<!--
 		<ul class="lista-links">
 
 			<form class="form-signin" action="{% url "registrar" %}" method="post">
@@ -37,10 +152,11 @@
        <p>Comece a cadastrar seus links acima!</p>
        {% endif %}
 	
-	</div>
+	</div> 
+-->
 
 
-<script src="../static/scripts/adicionaForm.js"></script>
+
 
 
 {% endblock %}
