@@ -83,7 +83,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-STATIC_ROOT = "home/ubuntu/Ignity-django-python-/static/"
+STATIC_ROOT = "/staticfile/"
 
 LOGIN="/"
 LOGOUT_URL="/logout/"
