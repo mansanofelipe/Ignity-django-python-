@@ -28,6 +28,7 @@
 	color:white;
 	height:5em;
 	margin-bottom: 15px;
+	width: 100%;
 }
 
 .botaoExterno:hover{
@@ -75,3 +76,6 @@
 	color: black;
 }
 
+.abre-janela {
+	width: 100%;
+}
