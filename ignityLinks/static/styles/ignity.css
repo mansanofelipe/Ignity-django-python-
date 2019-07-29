@@ -34,10 +34,7 @@
 	color:darksalmon;
 }
 
-.lista-outputs{
-	margin-left:40px;
-}
-
+	
 .num-cliques{
 
 	margin-bottom: 15px;
@@ -76,3 +73,21 @@
 .abre-janela {
 	width: 100%;
 }
+
+
+
+.container .col.one, .container .col.two, .container .col.three, .container .col.four, .container .col.five, .container .col.six, .container .col.seven, .container .col.eight, .container .col.nine, .container .col.ten, .container .col.eleven, .container .col.twelve { width: 100%; }
+
+.btn {font-size: 18px; white-space:nowrap; width:100%; padding:.8em 1.5em; font-family: Open Sans, Helvetica,Arial,sans-serif; line-height:18px; display: inline-block;zoom: 1; color: #fff; text-align: center; position:relative; -webkit-transition: border .25s linear, color .25s linear, background-color .25s linear; transition: border .25s linear, color .25s linear, background-color .25s linear;}
+
+.btn.btn-twitter{background-color: #2a91db; border-color: #2a91db; -webkit-box-shadow: 0 3px 0 #1d6ea7; box-shadow: 0 3px 0 #1d6ea7;}
+.btn.btn-twitter:active{top: 3px; outline: none; -webkit-box-shadow: none; box-shadow: none;}
+
+@media screen and (min-width: 767px) {
+  .container{width: 100%; max-width: 1080px; margin: 0 auto;}
+  .container .row{width:100%; float:left; clear:both;}
+  .container .col{float: left; margin: 0 0 1em; padding-right: .5em; padding-left: .5em;}
+  .container .col.one { width: 8.33%; }
+  .container .col.two { width: 16.66%; }
+  .container .col.three { width: 24.99%; }
+  .container .col.four { width: 50%; }
