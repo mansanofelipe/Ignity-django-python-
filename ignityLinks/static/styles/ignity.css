@@ -22,12 +22,10 @@
 }
 
 .botaoExterno{
-	background-color: salmon;
+	margin-top: 10px;
 	border: 1px darksalmon solid;	
 	font-weight: bold;
 	color:white;
-	height:5em;
-	margin-bottom: 15px;
 	width: 100%;
 }
 
@@ -64,9 +62,8 @@
 }
 
 .form-botao-externo{
-	height:7em;
-	margin-bottom: 0px;
-	margin-top:15px;
+	width: 100%;
+
 }
 
 .botao-deletar{

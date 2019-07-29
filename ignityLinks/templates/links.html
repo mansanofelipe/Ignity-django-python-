@@ -10,6 +10,16 @@
         <link rel="stylesheet" href="{% static "styles/bootstrap.css" %}">
         <link rel="stylesheet" href="{% static "styles/main.css" %}">
         <link rel="stylesheet" href="{% static "styles/ignity.css" %}">
+        <link rel="stylesheet" href="{% static "assets/web/assets/mobirise-icons/mobirise-icons.css"%}">
+        <link rel="stylesheet" href="{% static "assets/tether/tether.min.css"%}">
+        <link rel="stylesheet" href="{% static "assets/bootstrap/css/bootstrap.min.css"%}">
+        <link rel="stylesheet" href="{% static "assets/bootstrap/css/bootstrap-grid.min.css"%}">
+        <link rel="stylesheet" href="{% static "assets/bootstrap/css/bootstrap-reboot.min.css"%}">
+        <link rel="stylesheet" href="{% static "assets/socicon/css/styles.css"%}">
+        <link rel="stylesheet" href="{% static "assets/dropdown/css/style.css"%}">
+        <link rel="stylesheet" href="{% static "assets/theme/css/style.css"%}">
+        <link rel="stylesheet" href="{% static "assets/mobirise/css/mbr-additional.css"%}" type="text/css">
+
         <title>Links de {{perfil.nome}}</title>
     </head>
     <body>
@@ -19,13 +29,11 @@
               
 
         <img class="pull-right" src="{% static "assets/images/dancing-122x122.png" %}"  alt="Minha Home" title="" style="height: 3.8rem;">
-         <h3 class="text-muted pull-right">InstaGin.ga</h3>
+         <h4 class="text-muted pull-right">InstaGin.ga</h4>
 
  
 
-
-
-         <h3 class="text-muted">Links de {{perfil.nome}}</h3>
+         <h4 class="text-muted">Links de {{perfil.nome}}</h4>
 
          <div class="lista-outputs">
             <ul>
@@ -36,7 +44,10 @@
                 <div onclick="abreJanela('{{link.url}}')" class="abre-janela")>
                     <form action="{% url "clicalink" link.id %}" method="post" class="form-botao-externo">
                     {% csrf_token %}    
-                    <button class="botaoExterno btn btn-lg btn-block link-externo">{{link.titulo}}</button>
+                    <!--<button class="botaoExterno btn btn-lg btn-block link-externo">{{link.titulo}}</button> -->
+                    <div class="col-md-12 align-center">
+                            <button type="submit" class="btn btn-form btn-secondary display-2 botaoExterno">{{link.titulo}}</button>
+                    </div>
                     </form>
                     <!-- <span class="alinhamento">
                     <span class="num-cliques">Número de Cliques:{{link.cliques}} <span class="numero-cliques"></span></span>
